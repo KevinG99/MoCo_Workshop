@@ -7,8 +7,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
 
-private val NOTIFICATION_ID_0 = 0
-private val NOTIFICATION_ID_1 = 1
+private const val NOTIFICATION_ID_0 = 0
+private const val NOTIFICATION_ID_1 = 1
 
 /*Benachrichtigung, die nur in der Benachrichtigungsleiste angezeigt wird*/
 fun NotificationManager.sendshortNotification(
