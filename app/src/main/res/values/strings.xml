@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Android System Specific</string>
+    <string name="channelID">test1</string>
+    <string name="channelName">Short Notification</string>
+    <string name="secChannelName">Long Notification</string>
+    <string name="secChannelID">test2</string>
+    <string name="title_text">Title text</string>
+    <string name="notification_details">Notification Details</string>
+    <string name="short_channel_description">This is an test description for the short notifications</string>
+    <string name="expandable_channel_descirption">This is an channel description for the expandable notifications</string>
+
+</resources>
