@@ -34,10 +34,11 @@ fun NotificationManager.sendshortNotification(
         .setContentIntent(contentPendingIntent)         //ueberlaesst der fremden application mein gesetztes Intent --> Main Activity
         .setAutoCancel(true)                            //entfernt die Notification, beim Klick
 
+    //automatisches updaten der letzten Benachrichtigung
     notify(
         NOTIFICATION_ID_0,
         builder.build()
-    )          //automatisches updaten der letzten Benachrichtigung
+    )
 
 }
 
