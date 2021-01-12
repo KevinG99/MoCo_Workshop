@@ -2,8 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/runtimeper"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_margin="16dp"
     tools:context=".MainActivity">
 
@@ -49,11 +50,12 @@
         app:layout_constraintStart_toStartOf="@id/shortNotification_TextField_Details"
         app:layout_constraintTop_toBottomOf="@id/shortNotification_TextField_Details" />
 -->
+
     <EditText
         android:id="@+id/expandable_Notification_TextField_Details"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:hint="@string/notification_details"
         android:maxLines="1024"
         app:layout_constraintStart_toStartOf="@id/shortNotification_TextField_Details"
@@ -63,10 +65,25 @@
         android:id="@+id/expandable_Notification_Button"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="16dp"
         android:text="run expandable"
-        app:layout_constraintBottom_toBottomOf="@id/expandable_Notification_TextField_Details"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/expandable_Notification_TextField_Details" />
+        app:layout_constraintTop_toBottomOf="@+id/shortNotification_Button" />
+
+    <Button
+        android:id="@+id/permission"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:scrollHorizontally="true"
+        android:text="Give a Permission"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/expandable_Notification_Button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
