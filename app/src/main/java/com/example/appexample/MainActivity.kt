@@ -24,11 +24,12 @@ class MainActivity : AppCompatActivity() {
 
         //on Click, create short Notification
         shortNotification_Button.setOnClickListener {
-            createNotificationChannel(
+            val channel = createNotificationChannel(
                 getString(R.string.channelID),
                 getString(R.string.channelName),
                 getString(R.string.short_channel_description)
             )
+            notificationManager.createNotificationChannel(channel)
             //send short Notification with Notification Mananger
             notificationManager.sendshortNotification(
                 shortNotification_TextField_Details.text.toString(), //text Input from Activity
@@ -39,11 +40,12 @@ class MainActivity : AppCompatActivity() {
 
         //on Click, create expandable Notification
         expandable_Notification_Button.setOnClickListener {
-            createNotificationChannel(
+            val channel = createNotificationChannel(
                 getString(R.string.secChannelID),
                 getString(R.string.secChannelName),
                 getString(R.string.expandable_channel_descirption)
             )
+            notificationManager.createNotificationChannel(channel)
             notificationManager.sendexpandableNotification(
                 expandable_Notification_TextField_Details.text.toString(),
                 "Test Long",

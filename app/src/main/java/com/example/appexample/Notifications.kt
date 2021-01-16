@@ -97,12 +97,13 @@ fun NotificationManager.sendexpandableNotification(
 
 
 /*erstelle Benachrichtigungskanaele, diese sind seit SDK Version 26 Pflicht*/
-fun createNotificationChannel(channelID: String, channelName: String, channelDescription: String) {
-    NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_DEFAULT).apply {
+fun createNotificationChannel(channelID: String, channelName: String, channelDescription: String): NotificationChannel {
+    val notificationChannel = NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_DEFAULT).apply {
         description = channelDescription
         enableVibration(true)
         enableLights(true)
     }
+    return notificationChannel
 }
 
 
