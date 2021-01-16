@@ -103,8 +103,6 @@ fun createNotificationChannel(channelID: String, channelName: String, channelDes
         enableVibration(true)
         enableLights(true)
     }
-
-
 }
 
 
