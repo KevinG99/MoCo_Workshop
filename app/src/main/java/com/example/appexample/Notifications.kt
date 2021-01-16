@@ -17,7 +17,7 @@ fun NotificationManager.sendshortNotification(
     messagebody: String, title: String, context: Context
 ) {
     val contentIntent =
-        Intent(context, MainActivity2::class.java)          //create Intent, to MainActivity2
+        Intent(context, MainActivity2::class.java)             //create Intent, to MainActivity2
 
     val contentPendingIntent =
         PendingIntent.getActivity(                             //erzeugt Pending Intent
@@ -55,18 +55,17 @@ fun NotificationManager.sendexpandableNotification(
 
     //TODO: Step 1.1 create Intent
     val contentIntent =
-        Intent(context, MainActivity::class.java)                        //Intent erzeugt, zur MainActivity
+        Intent(context, MainActivity::class.java)    //Intent erzeugt, zur MainActivity
 
     //TODO: Step 1.2 create PendingIntent
     val contentPendingIntent =
-        PendingIntent.getActivity(                                       //erzeugt Pending Intent
+        PendingIntent.getActivity(                   //erzeugt Pending Intent
             context,
             NOTIFICATION_ID_0,
             contentIntent,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-                                                                             //set Alarm Receiver and create a pending Intent
     //TODO: Step 1.3 add sendNew Action (GIVEN)
     val alarmIntent = Intent(context, AlarmReceiver::class.java)
     val pendingIntent = PendingIntent.getBroadcast(
@@ -95,13 +94,13 @@ fun NotificationManager.sendexpandableNotification(
         .setAutoCancel(true)
 
         //TODO: Step 1.8 add color style
-        .setColorized(true)                                      //enable background color if the activity is in a foreground
-        .setColor(rgb)                                           //setze Farbe fuer Icon und Buttons
+        .setColorized(true)                          //enable background color if the activity is in a foreground
+        .setColor(rgb)                               //setze Farbe fuer Icon und Buttons
 
         //TODO: Step 1.9 add style to builder
         .setStyle(
-            NotificationCompat.BigTextStyle()                    //laesst den Text im Screen erscheinen und zeigt einen
-        )                                                       //groesseren message Body an
+            NotificationCompat.BigTextStyle()        //laesst den Text im Screen erscheinen und zeigt einen
+        )                                            //groesseren message Body an
 
         //TODO: Step 1.10 add Action to send a new Notification
         .addAction(
@@ -131,7 +130,7 @@ fun createNotificationChannel(
         description = channelDescription
         enableVibration(true)
         enableLights(true)
-        canBubble()                                                       //lets the notification peeks into the Screen
+        canBubble()                                  //lets the notification peeks into the Screen
         }
     }
 }
