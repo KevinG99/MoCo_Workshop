@@ -8,15 +8,15 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 
-private val NOTIFICATION_ID_0 = 0
-private val NOTIFICATION_ID_1 = 1
+private const val NOTIFICATION_ID_0 = 0
+private const val NOTIFICATION_ID_1 = 1
 
 /*Benachrichtigung, die nur in der Benachrichtigungsleiste angezeigt wird*/
 fun NotificationManager.sendshortNotification(
     messagebody: String, title: String, context: Context
 ) {
     val contentIntent =
-        Intent(context, MainActivity2::class.java) //Intent erzeugt, zur MainActivity
+        Intent(context, MainActivity2::class.java) //Intent erzeugt, zur MainActivity2
     val contentPendingIntent =
         PendingIntent.getActivity(                       //erzeugt Pending Intent
             context,

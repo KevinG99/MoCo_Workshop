@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="@id/shortNotification_TextField_Details" />
 
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/expandable_Notification_TextField_Details"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
