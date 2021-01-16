@@ -8,5 +8,7 @@
     <string name="notification_details">Notification Details</string>
     <string name="short_channel_description">This is an test description for the short notifications</string>
     <string name="expandable_channel_descirption">This is an channel description for the expandable notifications</string>
+    <string name="run_expandable">run expandable</string>
+    <string name="run_short">run short</string>
 
 </resources>

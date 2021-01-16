@@ -115,8 +115,6 @@ class MainActivity : AppCompatActivity() {
             ),
             STORAGE_PERMISSION_CODE
         )
-
-
     }
     //ENDE 8.07
 
@@ -145,8 +143,6 @@ class MainActivity : AppCompatActivity() {
     //TODO(Schritt 3 - Einzigartiger Code, um Berechtigungsanfrage zuordnen zu können.)
     //START
     companion object {
-
-
         /**
          * Berechtigungscode, der in der Methode onRequestPermissionsResult abgefragt wird
          *

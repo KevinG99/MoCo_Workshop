@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.appexample">
 
-    <!--TODO(Schritt 1 : Um ein Bild auszuwählen und zu speichern, müssen wir die Speicherberechtigungen für das Lesen und das Schreiben hinzufügen.)-->
-    <!--START-->
+    TODO(Schritt 1 : Um ein Bild auszuwählen und zu speichern, müssen wir die Speicherberechtigungen für das Lesen und das Schreiben hinzufügen.)
+    START
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--ENDE-->
+    ENDE
 
     <application
         android:allowBackup="true"
