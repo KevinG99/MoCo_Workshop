@@ -126,11 +126,11 @@ fun createNotificationChannel(
         channelName,
         NotificationManager.IMPORTANCE_DEFAULT
     ).apply {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-        description = channelDescription
-        enableVibration(true)
-        enableLights(true)
-        canBubble()                                  //lets the notification peeks into the Screen
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {       //check if the Build SDK is bigger than 29, to use canBubble()
+        description = channelDescription                //set channel description
+        enableVibration(true)                 //enable vibration
+        enableLights(true)                      //enable the notification LED
+        canBubble()                                    //lets the notification peeks into the Screen
         }
     }
 }
