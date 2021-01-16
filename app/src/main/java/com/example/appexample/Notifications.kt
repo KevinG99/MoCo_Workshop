@@ -16,7 +16,7 @@ fun NotificationManager.sendshortNotification(
     messagebody: String, title: String, context: Context
 ) {
     val contentIntent =
-        Intent(context, MainActivity2::class.java) //Intent erzeugt, zur MainActivity2
+        Intent(context, MainActivity2::class.java)       //create Intent, to MainActivity2
     val contentPendingIntent =
         PendingIntent.getActivity(                       //erzeugt Pending Intent
             context,
