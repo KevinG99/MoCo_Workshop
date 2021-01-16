@@ -1,6 +1,7 @@
 package com.example.appexample
 
 import android.Manifest
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.pm.PackageManager
@@ -16,6 +17,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //use Notification Manager
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
 
         //on Click, create short Notification
         shortNotification_Button.setOnClickListener {
@@ -24,9 +29,6 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.channelName),
                 getString(R.string.short_channel_description)
             )
-            //use Notification Manager
-            val notificationManager =
-                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             //send short Notification with Notification Mananger
             notificationManager.sendshortNotification(
                 shortNotification_TextField_Details.text.toString(), //text Input from Activity
@@ -42,14 +44,13 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.secChannelName),
                 getString(R.string.expandable_channel_descirption)
             )
-            val notificationManager =
-                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.sendexpandableNotification(
                 expandable_Notification_TextField_Details.text.toString(),
                 "Test Long",
                 this
             )
         }
+
 
         //TODO(Schritt 6: Klick-Event für ImageButton, um Bild aus Gallerie auszuwählen.)
         //START
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 
     //TODO(Schritt 2 - Zunächst müssen die Berechtigungen abgefragt werden
     // um ein Bild vom Gerät auswählen zu können bzw. zu speichern.)
@@ -142,7 +144,7 @@ class MainActivity : AppCompatActivity() {
 
     //TODO(Schritt 3 - Einzigartiger Code, um Berechtigungsanfrage zuordnen zu können.)
     //START
-    companion object{
+    companion object {
 
 
         /**

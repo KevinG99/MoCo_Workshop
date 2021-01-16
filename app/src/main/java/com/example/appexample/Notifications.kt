@@ -5,13 +5,11 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.content.res.Resources.Theme
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 
-private const val NOTIFICATION_ID_0 = 0
-private const val NOTIFICATION_ID_1 = 1
+private val NOTIFICATION_ID_0 = 0
+private val NOTIFICATION_ID_1 = 1
 
 /*Benachrichtigung, die nur in der Benachrichtigungsleiste angezeigt wird*/
 fun NotificationManager.sendshortNotification(
@@ -100,11 +98,13 @@ fun NotificationManager.sendexpandableNotification(
 
 /*erstelle Benachrichtigungskanaele, diese sind seit SDK Version 26 Pflicht*/
 fun createNotificationChannel(channelID: String, channelName: String, channelDescription: String) {
-    val notificationChannel =
-        NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_NONE)
+    NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_DEFAULT).apply {
+        description = channelDescription
+        enableVibration(true)
+        enableLights(true)
+    }
 
-    notificationChannel.description = channelDescription
-    notificationChannel.enableVibration(true)
+
 }
 
 
