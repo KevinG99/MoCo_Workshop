@@ -5,27 +5,30 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
+import android.content.res.Resources.Theme
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 
 private const val NOTIFICATION_ID_0 = 0
 private const val NOTIFICATION_ID_1 = 1
 
 /*Benachrichtigung, die nur in der Benachrichtigungsleiste angezeigt wird*/
 fun NotificationManager.sendshortNotification(
-    messagebody: String, title: String, applicationContext: Context
+    messagebody: String, title: String, context: Context
 ) {
     val contentIntent =
-        Intent(applicationContext, MainActivity2::class.java) //Intent erzeugt, zur MainActivity
+        Intent(context, MainActivity2::class.java) //Intent erzeugt, zur MainActivity
     val contentPendingIntent =
         PendingIntent.getActivity(                       //erzeugt Pending Intent
-            applicationContext,
+            context,
             NOTIFICATION_ID_0,
             contentIntent,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
     val builder = NotificationCompat.Builder(
-        applicationContext,
-        applicationContext.getString(R.string.channelID)
+        context,
+        context.getString(R.string.channelID)
     )
         .setSmallIcon(R.drawable.ic_short_notification)     //muss gesetzt sein
         .setContentTitle(title)                             //muss gesetzt sein
@@ -39,21 +42,20 @@ fun NotificationManager.sendshortNotification(
         NOTIFICATION_ID_0,
         builder.build()
     )
-
 }
 
 /*Benachrichtigung, die laengeren Text anzeigen laesst und ausserdem noch im Screen angezeigt wird*/
 fun NotificationManager.sendexpandableNotification(
-    messagebody: String, title: String, applicationContext: Context
+    messagebody: String, title: String, context: Context
 ) {
 
-    val rgb = applicationContext.resources.getColor(R.color.purple_500) //Farbe aus colors.xml
+    val rgb = ContextCompat.getColor(context, R.color.purple_500)
 
     val contentIntent =
-        Intent(applicationContext, MainActivity::class.java) //Intent erzeugt, zur MainActivity
+        Intent(context, MainActivity::class.java) //Intent erzeugt, zur MainActivity
     val contentPendingIntent =
         PendingIntent.getActivity(                       //erzeugt Pending Intent
-            applicationContext,
+            context,
             NOTIFICATION_ID_0,
             contentIntent,
             PendingIntent.FLAG_UPDATE_CURRENT
@@ -61,9 +63,9 @@ fun NotificationManager.sendexpandableNotification(
 
     //set Alarm Receiver and create a pending Intent
     //TODO: set Intents
-    val alarmIntent = Intent(applicationContext, AlarmReceiver::class.java)
+    val alarmIntent = Intent(context, AlarmReceiver::class.java)
     val pendingIntent = PendingIntent.getBroadcast(
-        applicationContext,
+        context,
         R.string.secChannelID,
         alarmIntent,
         PendingIntent.FLAG_UPDATE_CURRENT
@@ -72,8 +74,8 @@ fun NotificationManager.sendexpandableNotification(
 
     //creates the Notification
     val builder = NotificationCompat.Builder(
-        applicationContext,
-        applicationContext.getString(R.string.secChannelID)
+        context,
+        context.getString(R.string.secChannelID)
     )
         .setContentTitle(title)
         .setContentText(messagebody)

@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         //on Click, create short Notification
         shortNotification_Button.setOnClickListener {
             createNotificationChannel(

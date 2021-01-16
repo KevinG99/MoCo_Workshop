@@ -9,15 +9,6 @@
     tools:context=".MainActivity">
 
 
-    <!-- <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/shortNotification_TextField_Headline"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/title_text"
-        android:maxLength="30"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/shortNotification_TextField_Details"
@@ -40,16 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/shortNotification_TextField_Details" />
 
-    <!-- <EditText
-        android:id="@+id/expandable_Notification_TextField_Headline"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:hint="@string/title_text"
-        android:maxLength="40"
-        app:layout_constraintStart_toStartOf="@id/shortNotification_TextField_Details"
-        app:layout_constraintTop_toBottomOf="@id/shortNotification_TextField_Details" />
--->
+
 
     <EditText
         android:id="@+id/expandable_Notification_TextField_Details"
@@ -73,16 +55,13 @@
 
     <Button
         android:id="@+id/permission"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="8dp"
         android:scrollHorizontally="true"
         android:text="Give a Permission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/expandable_Notification_Button" />
 
