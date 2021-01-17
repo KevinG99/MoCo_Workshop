@@ -10,8 +10,6 @@ import androidx.core.content.ContextCompat
 class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
 
-        Toast.makeText(context, "Test das es funktioniert", Toast.LENGTH_LONG).show()
-
         val notificationManager = ContextCompat.getSystemService(
             context,
             NotificationManager::class.java
@@ -25,5 +23,4 @@ class AlarmReceiver : BroadcastReceiver() {
             context
         )
     }
-
 }
