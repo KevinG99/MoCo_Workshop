@@ -53,20 +53,20 @@ fun NotificationManager.sendexpandableNotification(
 
     val rgb = ContextCompat.getColor(context, R.color.purple_500)
 
-                                                                      //TODO: Step 1.1 create Intent
+    //TODO: Step 1.1 create Intent
     val contentIntent =
-        Intent(context, MainActivity::class.java)                       //Intent erzeugt, zur MainActivity
+        Intent(context, MainActivity::class.java)    //Intent erzeugt, zur MainActivity
 
-                                                                     //TODO: Step 1.2 create PendingIntent
+    //TODO: Step 1.2 create PendingIntent
     val contentPendingIntent =
-        PendingIntent.getActivity(                                         //erzeugt Pending Intent
+        PendingIntent.getActivity(                   //erzeugt Pending Intent
             context,
             NOTIFICATION_ID_1,
             contentIntent,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-                                                                   //TODO: Step 1.3 add sendNew Action (GIVEN)
+    //TODO: Step 1.3 add sendNew Action (GIVEN)
     val alarmIntent = Intent(context, AlarmReceiver::class.java)
     val pendingIntent = PendingIntent.getBroadcast(
         context,
