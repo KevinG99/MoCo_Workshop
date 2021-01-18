@@ -131,7 +131,7 @@ fun createNotificationChannel(
             enableVibration(true)                 //enable vibration
             enableLights(true)                      //enable the notification LED
             canBubble()                                    //lets the notification peeks into the Screen
-        }
+           }
     }
 }
 
